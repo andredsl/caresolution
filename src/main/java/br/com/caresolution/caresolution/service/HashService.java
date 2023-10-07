@@ -2,7 +2,7 @@ package br.com.caresolution.caresolution.service;
 
 
 
-import org.apache.commons.codec.digest.DigestUtils;
+//import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.stereotype.Service;
 
 import java.util.regex.Matcher;
@@ -33,7 +33,8 @@ public class HashService {
 
     public String calcularHashMD5(String texto) {
         // Calcula o hash MD5 do texto fornecido
-        return DigestUtils.md5Hex(texto);
+//        return DigestUtils.md5Hex(texto);
+        return texto;
     }
 
 
