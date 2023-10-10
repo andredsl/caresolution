@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . .
 
 # Build the application with Maven
-#RUN mvn package
+RUN mvn package
 
 # Expose default Spring Boot port
 EXPOSE 8081
