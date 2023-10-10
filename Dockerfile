@@ -14,6 +14,6 @@ COPY . .
 EXPOSE 8081
 
 # Run the jar file
-CMD ["java", "-jar", "target/Controle-financeiro-auth-0.0.1.jar"]
+CMD ["java", "-jar", "target/caresolution-0.0.1.jar"]
 
 #End
