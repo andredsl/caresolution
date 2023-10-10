@@ -1,14 +1,8 @@
-# Fetching latest version of Java
-FROM openjdk:18
+FROM maven:3.8.5-openjdk-17
+COPY . .
+RUN mvn clean package -DskipTest
 
-# Setting up work directory
-WORKDIR /app
-
-# Copy the jar file into our app
-COPY ./target/caresolution-0.0.1.jar /app
-
-# Exposing port 8080
+FROM openjdk:17.0.1-jdk-slim
+COPY --from=build /target/caresolution-0.01.jar caresolution.jar
 EXPOSE 8080
-
-# Starting the application
-CMD ["java", "-jar", "caresolution-0.0.1.jar"]
+ENTRYPOINT ["java", "-jar", "caresolution.jar"]
